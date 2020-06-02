@@ -1,12 +1,27 @@
+# Meat App
 
-<h1>Meat App</h1>
-This repository was created to practice and learn about Typescript and Angular from Udemy's Course:
-https://www.udemy.com/course/angular-pt/
-The goal of this project is create a web site that allows users to choose, order and pay for food in a list of restaurant which this user can select.
-<br>
-<strong>At the moment this project do:</strong>
-<ul>
-<li>Show a list of restaurants dynamically</li>
-<li>Allow users to select restaurants and see which products this restaurant sells</li>
-<li>Allow users to select products to a cart-shipping</li>
-</ul>
+## Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+Run `json-server db.json` for the mock server. Navigate to `http://localhost:3000/`. The app will automatically reload if you change any of the source files.
+
+## Why?
+
+This project was created to practice what I was learning in the Udemy Course on Angular.
+
+## Ok, but what does it do? 
+
+It's a delivery app. 
+Basically, the user will be presented with a list of restaurants that he / she can choose from and then add products from those restaurants to the shopping cart.
+
+## So, what did I learn?
+- Routes
+- Dependency injection
+- Service classes
+- Reactive Programming and Http service
+- Mock a back-end API (json-server)
+- Error handling
+- Parameterize routes
+- Children Routes
+- Pipes (async, date and currency)
