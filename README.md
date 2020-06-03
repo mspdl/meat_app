@@ -26,3 +26,4 @@ Basically, the user will be presented with a list of restaurants that he / she c
 - Children Routes
 - Pipes (async, date and currency)
 - Template Forms
+- Content Projection
