@@ -19,8 +19,7 @@ export class ShoppingCartService {
     }
 
     removeItem(item: CartItem) {
-        debugger
-        this.items.slice(this.items.indexOf(item), 1);
+        this.items.splice(this.items.indexOf(item), 1);
     }
 
     total(): number {
@@ -35,7 +34,6 @@ export class ShoppingCartService {
 
     decreaseQty(item: CartItem) {
         item.quantity = item.quantity - 1
-        debugger;
         if (item.quantity === 0) {
             this.removeItem(item)
         }
