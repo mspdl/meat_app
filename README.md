@@ -12,8 +12,8 @@ This project was created to practice what I was learning in the Udemy Course on 
 
 ## Ok, but what does it do? 
 
-It's a delivery app. 
-Basically, the user will be presented with a list of restaurants that he / she can choose from and then add products from those restaurants to the shopping cart.
+It's a delivery food app. 
+Basically, the user will be presented with a list of restaurants that he / she can choose from and then add products from those restaurants to the shopping cart. After informing he/she address and confirm the order, the system will register that order.
 
 ## So, what did I learn?
 - Routes
@@ -27,3 +27,6 @@ Basically, the user will be presented with a list of restaurants that he / she c
 - Pipes (async, date and currency)
 - Template Forms
 - Content Projection
+- Reactive Forms
+- Modules
+- Animations
