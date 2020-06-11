@@ -21,9 +21,7 @@ import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-
 import { RestaurantComponent } from './restaurants/restaurant/restaurant.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantsService } from './restaurants/restaurants.service';
-import { InputComponent } from './shared/input/input.component';
-import { RadioComponent } from './shared/radio/radio.component';
-import { RatingComponent } from './shared/rating/rating.component';
+import { SharedModule } from './shared/shared.module';
 
 
 
@@ -41,19 +39,15 @@ import { RatingComponent } from './shared/rating/rating.component';
     MenuItemComponent,
     ReviewsComponent,
     OrderComponent,
-    InputComponent,
-    RadioComponent,
     OrderItemsComponent,
     DeliveryCostsComponent,
-    OrderSummaryComponent,
-    RatingComponent
+    OrderSummaryComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES),
-    ReactiveFormsModule
+    SharedModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [
     RestaurantsService,
