@@ -6,8 +6,23 @@ import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
-    declarations: [InputComponent, RadioComponent, RatingComponent],
-    imports: [CommonModule, FormsModule, ReactiveFormsModule],
-    exports: [InputComponent, RadioComponent, RatingComponent, CommonModule, FormsModule, ReactiveFormsModule]
+    declarations: [
+        InputComponent,
+        RadioComponent,
+        RatingComponent
+    ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule
+    ],
+    exports: [
+        InputComponent,
+        RadioComponent,
+        RatingComponent,
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule
+    ]
 })
 export class SharedModule { }

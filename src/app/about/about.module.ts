@@ -7,7 +7,11 @@ const ROUTES: Routes = [
 ]
 
 @NgModule({
-    declarations: [AboutComponent],
-    imports: [RouterModule, RouterModule.forChild(ROUTES)]
+    declarations: [
+        AboutComponent
+    ],
+    imports: [
+        RouterModule.forChild(ROUTES)
+    ]
 })
 export class AboutModule { }
