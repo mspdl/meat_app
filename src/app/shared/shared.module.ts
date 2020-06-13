@@ -8,6 +8,7 @@ import { InputComponent } from "./input/input.component";
 import { SnackbarComponent } from './messages/snackbar/snackbar.component';
 import { RadioComponent } from "./radio/radio.component";
 import { RatingComponent } from "./rating/rating.component";
+import { NotificationService } from "./messages/motification.service";
 
 @NgModule({
     declarations: [
@@ -38,7 +39,8 @@ export class SharedModule {
             providers: [
                 OrderService,
                 RestaurantsService,
-                ShoppingCartService
+                ShoppingCartService,
+                NotificationService
             ]
         }
     }
