@@ -30,3 +30,4 @@ Basically, the user will be presented with a list of restaurants that he / she c
 - Reactive Forms
 - Modules
 - Animations
+- Building
