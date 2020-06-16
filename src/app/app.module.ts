@@ -1,4 +1,3 @@
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -46,7 +45,6 @@ import { SharedModule } from './shared/shared.module';
     })
   ],
   providers: [
-    { provide: LocationStrategy, useClass: HashLocationStrategy },
     { provide: LOCALE_ID, useValue: 'pt-BR' },
     FormBuilder
   ],

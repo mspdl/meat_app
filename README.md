@@ -6,6 +6,11 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Run `json-server db.json` to start the mock server. Navigate to `http://localhost:3000/`. The app will automatically reload if you change any of the source files.
 
+To build the project: ng build --prod --bh=/subdirectory/
+
+It's necessary to config your web server. More information:
+https://angular.io/guide/deployment
+
 ## Why?
 
 This project was created to practice what I was learning in the Udemy Course on Angular.
