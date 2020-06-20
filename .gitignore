@@ -2,10 +2,12 @@
 
 # compiled output
 /dist
+/backend/dist
 /tmp
 
 # dependencies
 /node_modules
+/backend/node_modules
 /bower_components
 
 # IDEs and editors
