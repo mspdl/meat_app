@@ -2,6 +2,7 @@ import { Express } from 'express'
 import * as fs from 'fs'
 import * as https from 'https'
 import * as jsonServer from 'json-server'
+import { handleAuthentication } from './auth'
 
 
 const server: Express = jsonServer.create()
@@ -15,6 +16,8 @@ server.use(middlewares)
 // To handle POST, PUT and PATCH you need to use a body-parser
 // You can use the one used by JSON Server
 server.use(jsonServer.bodyParser)
+// Middleware for login
+server.post('/login', handleAuthentication)
 
 // Use default router
 server.use(router)
