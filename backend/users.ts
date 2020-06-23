@@ -13,6 +13,6 @@ export class User {
 
 }
 
-export const users: {[key:string]: User } = {
+export const users: { [key: string]: User } = {
     "contato@morganespindola.com": new User('contato@morganespindola.com', 'Morgan', 'dev2020')
 }
