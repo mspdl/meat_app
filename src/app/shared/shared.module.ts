@@ -4,11 +4,12 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { OrderService } from "app/order/order.service";
 import { ShoppingCartService } from "app/restaurant-detail/shopping-cart/shopping-cart.service";
 import { RestaurantsService } from "app/restaurants/restaurants.service";
+import { LoginService } from "app/security/login/login.service";
 import { InputComponent } from "./input/input.component";
+import { NotificationService } from "./messages/motification.service";
 import { SnackbarComponent } from './messages/snackbar/snackbar.component';
 import { RadioComponent } from "./radio/radio.component";
 import { RatingComponent } from "./rating/rating.component";
-import { NotificationService } from "./messages/motification.service";
 
 @NgModule({
     declarations: [
@@ -40,7 +41,8 @@ export class SharedModule {
                 OrderService,
                 RestaurantsService,
                 ShoppingCartService,
-                NotificationService
+                NotificationService,
+                LoginService
             ]
         }
     }
