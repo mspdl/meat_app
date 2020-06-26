@@ -19,6 +19,7 @@ import { RestaurantComponent } from './restaurants/restaurant/restaurant.compone
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { LoginComponent } from './security/login/login.component';
 import { SharedModule } from './shared/shared.module';
+import { UserDetailComponent } from './header/user-detail/user-detail.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { SharedModule } from './shared/shared.module';
     ReviewsComponent,
     OrderSummaryComponent,
     NotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
