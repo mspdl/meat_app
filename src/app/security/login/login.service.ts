@@ -14,7 +14,7 @@ export class LoginService {
     constructor(
         private http: HttpClient,
         private router: Router
-        ) { }
+    ) { }
 
     isLoggedIn(): boolean {
         return this.user !== undefined
@@ -28,7 +28,7 @@ export class LoginService {
     }
 
     handleLogin(path?: string) {
-        this.router.navigate(['/login', path])
+        this.router.navigate(['/login', btoa(path)])
     }
 
 }
