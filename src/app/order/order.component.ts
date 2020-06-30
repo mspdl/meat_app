@@ -18,6 +18,8 @@ export class OrderComponent implements OnInit {
 
   orderForm: FormGroup
 
+  orderId: string
+
   paymentOptions: RadioOption[] = [
     { label: 'Dinheiro', value: 'MON' },
     { label: 'Cartão de Débito', value: 'DEB' },
@@ -78,17 +80,22 @@ export class OrderComponent implements OnInit {
     return this.cartItems().length > 0 ? 8 : 0;
   }
 
+  isOrderCompleted(): boolean {
+    return this.orderId !== undefined
+  }
+
   checkOrder(order: Order) {
     order.orderItems = this.cartItems().map(
       (item: CartItem) => new OrderItem(item.quantity, item.menuItem.id))
 
     this.orderSerice.checkOrder(order)
+      .do((orderId: string) => {
+        this.orderId = orderId
+      })
       .subscribe((orderId: string) => {
         this.router.navigate(['/order-summary'])
         this.orderSerice.clear()
       })
-
-    console.log(order)
   }
 
 }

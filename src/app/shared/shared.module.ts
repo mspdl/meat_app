@@ -6,6 +6,7 @@ import { ShoppingCartService } from "app/restaurant-detail/shopping-cart/shoppin
 import { RestaurantsService } from "app/restaurants/restaurants.service";
 import { LoggedInGuard } from "app/security/loggedin.guard";
 import { LoginService } from "app/security/login/login.service";
+import { LeaveOrderGuard } from "../order/leave-order.guard";
 import { InputComponent } from "./input/input.component";
 import { NotificationService } from "./messages/motification.service";
 import { SnackbarComponent } from './messages/snackbar/snackbar.component';
@@ -44,7 +45,8 @@ export class SharedModule {
                 ShoppingCartService,
                 NotificationService,
                 LoginService,
-                LoggedInGuard
+                LoggedInGuard,
+                LeaveOrderGuard
             ]
         }
     }
