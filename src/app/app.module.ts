@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { LOCALE_ID, NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule, ErrorHandler } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,6 +20,7 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { LoginComponent } from './security/login/login.component';
 import { SharedModule } from './shared/shared.module';
 import { UserDetailComponent } from './header/user-detail/user-detail.component';
+import { ApplicationErrorHandler } from './app.error.handler';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { UserDetailComponent } from './header/user-detail/user-detail.component'
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' },
-    FormBuilder
+    FormBuilder,
+    { provide: ErrorHandler, useClass: ApplicationErrorHandler }
   ],
   bootstrap: [AppComponent]
 })
