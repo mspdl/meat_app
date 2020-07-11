@@ -6,7 +6,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Run `nodemon --watch backend --exec "ts-node" backend/server.ts` to start the mock server. Navigate to `http://localhost:3001/`. The app will automatically reload if you change any of the source files.
 
-To build the project: ng build --prod --bh=/subdirectory/
+To build the project: `ng build --prod --bh=/subdirectory/ --extract-css=false`
 
 It's necessary to config your web server. More information:
 https://angular.io/guide/deployment
