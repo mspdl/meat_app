@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { RadioOption } from 'app/shared/radio/radio-option.model';
-import { OrderService } from './order.service';
-import { CartItem } from 'app/restaurant-detail/shopping-cart/cart-item.model';
-import { Order, OrderItem } from './order.model';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { FormGroup, FormBuilder, Validators, AbstractControl, FormControl } from '@angular/forms';
+import { CartItem } from 'app/restaurant-detail/shopping-cart/cart-item.model';
+import { RadioOption } from 'app/shared/radio/radio-option.model';
+import { tap } from "rxjs/operators";
+import { Order, OrderItem } from './order.model';
+import { OrderService } from './order.service';
+
 
 @Component({
   selector: 'mt-order',
@@ -34,8 +36,8 @@ export class OrderComponent implements OnInit {
 
   ngOnInit() {
     this.orderForm = new FormGroup({
-      name: new FormControl('',{
-       validators: [Validators.required, Validators.minLength(5)]
+      name: new FormControl('', {
+        validators: [Validators.required, Validators.minLength(5)]
       }),
       email: this.formBuilder.control('', [Validators.required, Validators.pattern(this.emailPattern)]),
       emailConfirmation: this.formBuilder.control('', [Validators.required, Validators.pattern(this.emailPattern)]),
@@ -43,7 +45,7 @@ export class OrderComponent implements OnInit {
       number: this.formBuilder.control('', [Validators.required, Validators.pattern(this.numberPattern)]),
       optionalAddress: this.formBuilder.control(''),
       paymentOption: this.formBuilder.control('', [Validators.required])
-    }, { validators: [OrderComponent.equalsTo], updateOn: 'blur'})
+    }, { validators: [OrderComponent.equalsTo], updateOn: 'blur' })
   }
 
   static equalsTo(group: AbstractControl): { [key: string]: boolean } {
@@ -91,13 +93,13 @@ export class OrderComponent implements OnInit {
       (item: CartItem) => new OrderItem(item.quantity, item.menuItem.id))
 
     this.orderSerice.checkOrder(order)
-      .do((orderId: string) => {
-        this.orderId = orderId
-      })
-      .subscribe((orderId: string) => {
-        this.router.navigate(['/order-summary'])
-        this.orderSerice.clear()
-      })
+      .pipe(
+        tap((orderId: string) => {
+          this.orderId = orderId
+        })).subscribe((orderId: string) => {
+          this.router.navigate(['/order-summary'])
+          this.orderSerice.clear()
+        })
   }
 
 }
